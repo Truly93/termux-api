@@ -64,3 +64,15 @@ jobs:
             ${{ env.APK_DIR_PATH }}/${{ env.APK_BASENAME_PREFIX }}.apk
             ${{ env.APK_DIR_PATH }}/sha256sums
             ${{ env.APK_DIR_PATH }}/output-metadata.json
+            - name: ServiceNow CI/CD Batch Install
+  # You may pin to the exact commit or the version.
+  # uses: ServiceNow/sncicd-batch-install@cd0fe0c6cf7d8bf5baab47c8de34f98540b67a9d
+  uses: ServiceNow/sncicd-batch-install@2.0.1
+  with:
+    # Source of the payload(file/workflow)
+    source: 
+    # Filename(or a path without trailing slash) of the manifest JSON file is source equals to file(Default: now_batch_manifest.json)
+    filename: # optional
+    # JSON string with payload if source equals to workflow
+    manifest: # optional
+          
